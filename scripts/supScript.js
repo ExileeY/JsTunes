@@ -1,0 +1,1 @@
+export const addZero = elem => elem < 10 ? "0" + elem : elem;
