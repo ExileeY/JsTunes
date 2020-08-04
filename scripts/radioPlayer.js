@@ -7,6 +7,7 @@ export const radioPlayerInit = () => {
     const radioStop = document.querySelector('.radio-stop');
     const radioVolume = document.querySelector('.radio-volume');
     const radioVolumeUp = document.querySelector('.radio-volume-up');
+    const playerBtn = document.querySelectorAll('.player-btn');
 
 
     const audio = new Audio();
@@ -75,6 +76,13 @@ export const radioPlayerInit = () => {
             radioVolume.value = 0;
         }
     });
+
+    playerBtn.forEach(btn => btn.addEventListener('click', () => {
+        radio.classList.remove('play');
+        radioStop.classList.remove('fa-pause');
+        radioStop.classList.add('fa-play');
+        audio.pause();
+    }));
 
     audio.volume = 0.5;
 
